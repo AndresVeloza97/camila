@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    >
+
+    <meta
+        name="description"
+        content="Nuestra historia ❤️"
+    >
+
+    <title>Nuestra Historia ❤️</title>
+
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================================================
+         PANTALLA DE INICIO
+    ========================================================== -->
+
+    <div id="introScreen" class="intro-screen">
+
+        <div class="intro-background"></div>
+        
+
+        <div class="intro-content">
+
+            <div class="intro-heart">
+                ❤️
+            </div>
+
+            <p class="intro-small">
+                Quiero que veas todo lo que hemos vivido juntos
+            </p>
+
+            <h1>
+                Nuestra historia
+            </h1>
+
+            <p class="intro-subtitle">
+                recuerdos · momentos · canciones
+            </p>
+
+            <button
+                id="startButton"
+                class="primary-button"
+            >
+                <span>Entrar a nuestra historia</span>
+                <span class="button-heart">♥</span>
+            </button>
+
+            <p class="intro-note">
+                🎵 Sube el volumen
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         CONTENIDO PRINCIPAL
+    ========================================================== -->
+
+    <main id="mainContent" class="main-content hidden">
+
+
+        <!-- =====================================================
+             HERO
+        ====================================================== -->
+
+        <section
+            class="hero-section"
+            data-cancion="1"
+        >
+
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content">
+
+                <p class="hero-small">
+                    Camila te quiero❤️
+                </p>
+
+                <h1>
+                    Nuestra historia
+                </h1>
+
+                <p class="hero-description">
+                    No sé exactamente en qué momento empezamos
+                    a construir esto, han sido tantos momentos juntos, te convertiste en parte de mi vida y yo en parte de la tuya, te quiero y espero veas este resumen de lo que somos.
+                    <br>
+                  
+                </p>
+
+                <div class="scroll-indicator">
+
+                    <span>
+                        Desliza para comenzar
+                    </span>
+
+                    <div class="scroll-arrow">
+                        ↓
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             INTRODUCCIÓN
+        ====================================================== -->
+
+        <section class="text-section reveal">
+
+            <div class="section-container narrow">
+
+                <span class="section-label">
+                    CAPÍTULO I
+                </span>
+
+                <h2>
+                    Y entonces comenzamos...
+                </h2>
+
+                <p>
+                    Hay personas que llegan a nuestra vida sin avisar
+                    y terminan convirtiéndose en una parte enorme
+                    de nuestra historia.
+                    Esta página guarda algunos de esos momentos.
+                    Algunos grandes, otros pequeños...
+                    pero todos importantes para mí.
+
+                    Quiero que veas lo que eres y significas para mí Cami, mi gol al noventa.
+                </p>
+
+
+                <div class="decorative-heart">
+                    ♥
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             MENSAJE ESPECIAL 1
+        ====================================================== -->
+
+        <section class="special-message reveal">
+
+            <div class="special-card">
+
+                <span class="special-icon">
+                    ✨
+                </span>
+
+                <p class="special-label">
+                    ALGO QUE QUIERO QUE SEPAS
+                </p>
+
+                <h2>
+                    De todos mis recuerdos favoritos,
+                    muchos tienen algo en común...
+                </h2>
+
+                <p>
+                    Tú.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             GALERÍA DE RECUERDOS
+             CANCIÓN 2
+        ====================================================== -->
+
+        <section
+            id="recuerdosSection"
+            class="recuerdos-section"
+            data-cancion="2"
+        >
+
+            <div class="section-container">
+
+                <div class="section-heading reveal">
+
+                    <span class="section-label">
+                        NUESTROS RECUERDOS
+                    </span>
+
+                    <h2>
+                        Momentos que quiero guardar
+                    </h2>
+
+                    <p>
+                       Me encanta todo de ti, de verdad, desde lo más obvio hasta los detalles más pequeños que seguro ni te das cuenta de que haces.
+                    </p>
+
+                </div>
+
+
+                <!-- =================================================
+                     TRANSICIÓN A CANCIÓN 2
+                ================================================== -->
+
+                <div
+                    id="song2Transition"
+                    class="song-transition reveal"
+                >
+
+                    <div class="song-transition-icon">
+                        🎵
+                    </div>
+
+                    <span class="section-label">
+                        CAPÍTULO II
+                    </span>
+
+                    <h2>
+                        Hay algo más que quiero que escuches...
+                    </h2>
+
+                    <p>
+                        Porque algunos recuerdos también tienen
+                        una canción.
+                    </p>
+
+                    <button
+                        id="song2Button"
+                        class="primary-button song-start-button"
+                    >
+                        <span>
+                            ▶ Continuar con nuestra historia
+                        </span>
+
+                        <span class="button-heart">
+                            ♥
+                        </span>
+                    </button>
+
+                </div>
+
+
+                <!-- Aquí JS colocará las 90 fotos -->
+
+                <div
+                    id="recuerdosContainer"
+                    class="recuerdos-container"
+                ></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             MENSAJE ESPECIAL 2
+        ====================================================== -->
+
+        <section class="special-message alternate reveal">
+
+            <div class="special-card">
+
+                <span class="special-icon">
+                    💌
+                </span>
+
+                <p class="special-label">
+                    ENTRE TODOS ESTOS RECUERDOS
+                </p>
+
+                <h2>
+                    Hay algo que tengo que decirte
+                </h2>
+
+                <p>
+                    Lo bonito no está solamente en las grandes
+                    ocasiones.
+                    <br><br>
+                    También está en las miradas, las risas,
+                    los abrazos, las conversaciones y esos
+                    momentos que solamente nosotros entendemos, esta en esas pequeñas cosas que vivimos, cocinar juntos, bailar mientras cocinamos, disfrutar la vida, dormir arrunchados el uno al otro, cada una de estas cosas son importantes para mi, eres mi musa, mi inspiración, eres lo mas hermoso que tengo.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             VIDEOS
+        ====================================================== -->
+
+        <section
+            id="videosSection"
+            class="videos-section"
+        >
+
+            <div class="section-container">
+
+                <div class="section-heading reveal">
+
+                    <span class="section-label">
+                        Nuestros videos
+                    </span>
+
+                    <h2>
+                       Estas memorias me recuerdan todo lo que vivimos y lo especial que es cada una de ellas
+                    </h2>
+
+                    <p>
+                        Estos momentos también forman parte
+                        de nuestra historia.
+                    </p>
+
+                </div>
+
+                <!-- Videos generados por JS -->
+
+                <div
+                    id="videosContainer"
+                    class="videos-container"
+                ></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             MENSAJE SOBRE ELLA
+        ====================================================== -->
+
+        <section class="about-her-section reveal">
+
+            <div class="about-her-container">
+
+                <span class="section-label">
+                    Y SI ME PREGUNTARAN POR TI...
+                </span>
+
+                <h2>
+                    ¿Qué pienso de ti?
+                </h2>
+
+                <div class="about-her-text">
+
+                    <p>
+                        A veces me cuesta encontrar las palabras exactas para explicar lo que pienso de ti, porque siento que ninguna termina de abarcar todo lo que significas para mí.
+
+Pienso que eres una persona increíble, maravillosa. Que tienes una forma de ser que, incluso sin darte cuenta, deja huella. Me encanta tu sonrisa, tu manera de mirar, tus pequeños gestos y esas cosas que quizás para ti no significan demasiado, pero que yo he aprendido a reconocer y a querer.
+
+Pienso en todo lo que hemos vivido y me doy cuenta de que no me enamoré solamente de los momentos bonitos. Me enamoré de ti, de quién eres, de nuestras conversaciones, de nuestras risas, de las cosas que hemos aprendido juntos y hasta de esos momentos difíciles que nos han hecho entender que una relación también significa aprender, cambiar y volver a intentarlo.
+
+Admiro muchas cosas de ti. Tu forma de sentir, tu manera de preocuparte por las personas que quieres, tus sueños, tus ganas de salir adelante y esa personalidad que te hace ser simplemente tú. Y quizás una de las cosas que más quiero es que nunca tengas que dejar de serlo.
+
+Si me preguntaran qué veo cuando pienso en ti, no pensaría solamente en una persona bonita. Pensaría en alguien que se convirtió en una parte enorme de mi vida. En alguien con quien he compartido recuerdos que no cambiaría por nada.
+
+Y sí, sé que no todo ha sido perfecto. Hemos tenido momentos difíciles, hemos cometido errores y seguramente todavía nos quedan muchas cosas por aprender. Pero cuando pienso en ti, lo primero que aparece no son esas dificultades. Aparecen todos esos pequeños momentos que hicieron que me enamorara de nosotros.
+
+Pienso que eres alguien que vale muchísimo.
+
+Y sobre todo pienso que, después de todo lo que hemos vivido, todavía hay una parte de mí que mira hacia adelante y se imagina creando muchos más recuerdos contigo.
+
+Porque entre tantas personas que pudieron aparecer en mi vida, tuve la suerte de encontrarte a ti. Eres mi mas grande casualidad amor.
+                    </p>
+
+
+                    <strong>
+                        Eres lo mas hermoso del mundo
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SEGUNDO MENSAJE ESPECIAL
+        ====================================================== -->
+
+        <section class="full-message reveal">
+
+            <div class="full-message-inner">
+
+                <div class="message-line"></div>
+
+                <p>
+                    Si pudiera volver a vivir algunos de estos
+                    momentos...
+                </p>
+
+                <h2>
+                    Los volvería a elegir.
+                </h2>
+
+                <p>
+                    Porque te elegiría a ti.
+                </p>
+
+                <div class="message-line"></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CARTA FINAL
+             CANCIÓN 3
+        ====================================================== -->
+
+        <section
+            id="finalLetter"
+            class="letter-section"
+            data-cancion="3"
+        >
+
+            <div class="letter-background"></div>
+
+            <div class="letter-container">
+
+                <span class="section-label">
+                    CAPÍTULO FINAL
+                </span>
+
+                <div class="letter-envelope">
+                    💌
+                </div>
+
+                <h2>
+                    Una última cosa...
+                </h2>
+
+
+                <!-- =============================================
+                     TRANSICIÓN A CANCIÓN 3
+                ============================================== -->
+
+                <div
+                    id="song3Transition"
+                    class="song-transition final-song-transition reveal"
+                >
+
+                    <div class="song-transition-icon">
+                        ❤️
+                    </div>
+
+                    <span class="section-label">
+                        ANTES DE LEER ESTO...
+                    </span>
+
+                    <h2>
+                        Quiero que escuches algo.
+                    </h2>
+
+                    <p>
+                        Deja que esta canción te acompañe
+                        mientras lees mis últimas palabras.
+                    </p>
+
+                    <button
+                        id="song3Button"
+                        class="primary-button song-start-button"
+                    >
+                        <span>
+                            ❤️ Comenzar la carta
+                        </span>
+
+                        <span class="button-heart">
+                            ♥
+                        </span>
+                    </button>
+
+                </div>
+
+
+                <!-- =============================================
+                     CARTA
+                ============================================== -->
+
+                <div class="letter-paper">
+
+                    <p class="letter-greeting">
+                        Para ti:
+                    </p>
+
+                    <div id="letterText">
+
+                        <p>
+                            Cami a veces me cuesta encontrar las palabras exactas para explicar lo que pienso de ti, porque siento que ninguna termina de abarcar todo lo que significas para mí.
+
+Pienso que eres una persona increíble. Que tienes una forma de ser que, incluso sin darte cuenta, deja huella. Me encanta tu sonrisa, tu manera de mirar, tus pequeños gestos y esas cosas que quizás para ti no significan demasiado, pero que yo he aprendido a reconocer y a querer.
+
+Pienso en todo lo que hemos vivido y me doy cuenta de que no me enamoré solamente de los momentos bonitos. Me enamoré de ti, de quién eres, de nuestras conversaciones, de nuestras risas, de las cosas que hemos aprendido juntos y hasta de esos momentos difíciles que nos han hecho entender que una relación también significa aprender, cambiar y volver a intentarlo.
+
+Admiro muchas cosas de ti. Tu forma de sentir, tu manera de preocuparte por las personas que quieres, tus sueños, tus ganas de salir adelante y esa personalidad que te hace ser simplemente tú. Y quizás una de las cosas que más quiero es que nunca tengas que dejar de serlo.
+
+Si me preguntaran qué veo cuando pienso en ti, no pensaría solamente en una persona bonita. Pensaría en alguien que se convirtió en una parte enorme de mi vida. En alguien con quien he compartido recuerdos que no cambiaría por nada.
+
+Y sí, sé que no todo ha sido perfecto. Hemos tenido momentos difíciles, hemos cometido errores y seguramente todavía nos quedan muchas cosas por aprender. Pero cuando pienso en ti, lo primero que aparece no son esas dificultades. Aparecen todos esos pequeños momentos que hicieron que me enamorara de nosotros.
+
+Pienso que eres alguien que vale muchísimo.
+
+Y sobre todo pienso que, después de todo lo que hemos vivido, todavía hay una parte de mí que mira hacia adelante y se imagina creando muchos más recuerdos contigo.
+
+Porque entre tantas personas que pudieron aparecer en mi vida, tuve la suerte de encontrarte a ti.
+                        </p>
+
+                      
+
+                        <p class="letter-highlight">
+                            No quiero que nuestra historia termine aquí.
+                        </p>
+
+                        <p>
+                            Camila,
+
+Hay algo que necesito decirte después de que hayas visto todo esto.
+
+No quiero que nuestra historia termine aquí.
+
+No quiero que todos estos recuerdos se conviertan simplemente en algo que alguna vez fuimos. No quiero mirar nuestras fotos dentro de unos años y pensar que hasta ahí llegó todo lo que pudimos haber sido.
+
+Sé que últimamente las cosas no han sido fáciles.
+
+Sé que hemos cambiado, que hemos tenido momentos en los que nos hemos sentido lejos y que probablemente los dos hemos cometido errores. Sé que quizás hubo momentos en los que no te hice sentir como merecías, y me duele saber que pude hacerte sentir así.
+
+Y no quiero ignorarlo.
+
+Quiero aprender de eso.
+
+Porque si algo me ha hecho entender todo este tiempo es que quererte no significa solamente querer los días bonitos. También significa querer escucharte cuando algo te duele, entenderte cuando algo te hace falta y trabajar en mí mismo cuando sé que puedo hacerlo mejor.
+
+Y yo quiero hacerlo.
+
+No te prometo que nunca vamos a tener problemas. No te prometo una relación perfecta porque no creo que eso exista.
+
+Pero sí puedo prometerte que si todavía existe una oportunidad para nosotros, quiero aprovecharla.
+
+Quiero volver a construir contigo.
+
+Quiero que volvamos a tener esas conversaciones que se alargaban sin darnos cuenta, volver a reírnos por cualquier tontería, volver a hacer planes, conocer lugares, cantar juntos, tomarnos fotos que algún día podamos agregar a esta página y crear recuerdos que todavía no existen.
+
+Quiero que esta página no sea un recuerdo de lo que tuvimos.
+
+Quiero que algún día podamos volver aquí y agregar más fotos.
+
+Más canciones.
+
+Más historias.
+
+Más capítulos.
+
+Porque todavía tengo muchas cosas que quiero vivir contigo.
+
+Y no te estoy diciendo esto porque tenga miedo de estar sin ti.
+
+Te lo digo porque, después de mirar todo lo que hemos vivido, sé que todavía te elegiría a ti.
+
+Sé que hay cosas que tenemos que sanar y otras que tenemos que cambiar.
+
+Pero también sé que cuando pienso en perderte, siento que estaría dejando ir a alguien que para mí vale demasiado.
+
+Por eso, si todavía queda un espacio para nosotros...
+
+Si todavía queda un poquito de ese amor que alguna vez nos hizo elegirnos...
+
+yo quiero intentarlo.
+
+No para volver a ser exactamente quienes éramos.
+
+Sino para convertirnos en algo mejor.
+
+Juntos.
+
+Porque nuestra historia ya tiene demasiados recuerdos como para pensar que este tiene que ser el último.
+                        </p>
+
+
+                        <p class="letter-final">
+                            Porque todavía quiero que seas parte
+                            de mi historia.
+                        </p>
+
+                        <p class="letter-signature">
+                            Con todo mi corazón ❤️
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             PREGUNTA FINAL
+        ====================================================== -->
+
+        <section class="final-question reveal">
+
+            <div class="final-question-container">
+
+                <div class="final-heart">
+                    ❤️
+                </div>
+
+                <span class="section-label">
+                    Y AHORA...
+                </span>
+
+                <h2>
+                    ¿Seguimos escribiendo
+                    nuestra historia?
+                </h2>
+
+                <p>
+                   Y si me preguntas qué quiero ser…
+Todavía quiero serlo. ❤️
+
+Te amo. Y no me canso de decírtelo.
+Te quiero, no quiero rendirme contigo ni con nosotros.
+
+Y aquí estoy.
+Si me dices que vaya a verte a las 12 de la noche, voy.
+No porque tenga que hacerlo, sino porque todavía quiero estar ahí.
+Contigo. ❤️
+                </p>
+
+                <div class="final-decoration">
+                    ───── ♥ ─────
+                </div>
+
+                <p class="final-small">
+                    Gracias por ser parte de mi vida.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             FOOTER
+        ====================================================== -->
+
+        <footer class="footer">
+
+            <p>
+                Hecho con todo mi amor para ti Camila
+            </p>
+
+            <span>
+                Eres unica, increible y hermosa, te amo ❤️
+            </span>
+
+        </footer>
+
+    </main>
+
+
+    <!-- =========================================================
+         REPRODUCTOR DE MÚSICA
+    ========================================================== -->
+
+    <audio
+        id="backgroundMusic"
+        preload="auto"
+    ></audio>
+
+
+    <!-- =========================================================
+         BOTÓN FLOTANTE DE MÚSICA
+    ========================================================== -->
+
+    <button
+        id="musicButton"
+        class="music-button hidden"
+        aria-label="Controlar música"
+    >
+
+        <span id="musicIcon">
+            🎵
+        </span>
+
+        <span id="musicStatus">
+            Música
+        </span>
+
+    </button>
+
+
+    <!-- =========================================================
+         MODAL PARA FOTOS
+    ========================================================== -->
+
+    <div
+        id="photoModal"
+        class="photo-modal hidden"
+    >
+
+        <button
+            id="closeModal"
+            class="close-modal"
+            aria-label="Cerrar"
+        >
+            ×
+        </button>
+
+        <button
+            id="prevPhoto"
+            class="modal-arrow modal-prev"
+            aria-label="Foto anterior"
+        >
+            ‹
+        </button>
+
+        <div class="modal-content">
+
+            <img
+                id="modalImage"
+                src=""
+                alt="Recuerdo"
+            >
+
+            <div class="modal-info">
+
+                <span id="modalDate"></span>
+
+                <h3 id="modalTitle"></h3>
+
+                <p id="modalText"></p>
+
+            </div>
+
+        </div>
+
+        <button
+            id="nextPhoto"
+            class="modal-arrow modal-next"
+            aria-label="Foto siguiente"
+        >
+            ›
+        </button>
+
+    </div>
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================== -->
+
+    <script src="script.js"></script>
+
+</body>
+</html>
