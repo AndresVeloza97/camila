@@ -1983,3 +1983,170 @@ document.addEventListener(
 
     }
 );
+
+/* =========================================================
+   REGISTRO OCULTO DE VISITAS - SUPABASE
+========================================================= */
+
+const SUPABASE_URL =
+    "https://zvkzygznvwjanftsgvgr.supabase.co";
+
+const SUPABASE_KEY =
+    "sb_publishable_th4OFkiFcQSukM4TwIItRQ_VO6HsSi8";
+
+
+async function registrarVisita() {
+
+    /*
+       Creamos un identificador para este dispositivo.
+
+       Así evitamos contar muchas veces a la misma persona
+       simplemente porque recargue la página.
+    */
+
+    const CLAVE_VISITA =
+        "nuestra_historia_ultima_visita";
+
+
+    const ultimaVisita =
+        localStorage.getItem(
+            CLAVE_VISITA
+        );
+
+
+    const ahora =
+        Date.now();
+
+
+    /*
+       Una nueva visita solo se registra después
+       de 24 horas.
+    */
+
+    const VEINTICUATRO_HORAS =
+        24 * 60 * 60 * 1000;
+
+
+    if (
+        ultimaVisita &&
+        ahora - Number(ultimaVisita)
+        < VEINTICUATRO_HORAS
+    ) {
+
+        return;
+
+    }
+
+
+    const esCelular =
+        /Android|iPhone|iPad|iPod|Mobile/i.test(
+            navigator.userAgent
+        );
+
+
+    const datosVisita = {
+
+        pagina:
+            window.location.href,
+
+        dispositivo:
+            esCelular
+                ? "Celular"
+                : "PC",
+
+        navegador:
+            navigator.userAgent
+
+    };
+
+
+    try {
+
+        const respuesta =
+            await fetch(
+                `${SUPABASE_URL}/rest/v1/visitas`,
+                {
+
+                    method:
+                        "POST",
+
+                    headers: {
+
+                        "Content-Type":
+                            "application/json",
+
+                        "apikey":
+                            SUPABASE_KEY,
+
+                        "Authorization":
+                            `Bearer ${SUPABASE_KEY}`,
+
+                        "Prefer":
+                            "return=minimal"
+
+                    },
+
+                    body:
+                        JSON.stringify(
+                            datosVisita
+                        )
+
+                }
+            );
+
+
+        if (
+            respuesta.ok
+        ) {
+
+            /*
+               Solo guardamos la fecha local si Supabase
+               confirmó que la visita fue registrada.
+            */
+
+            localStorage.setItem(
+                CLAVE_VISITA,
+                ahora.toString()
+            );
+
+
+            console.log(
+                "Visita registrada correctamente."
+            );
+
+        }
+
+        else {
+
+            console.log(
+                "No se pudo registrar la visita:",
+                respuesta.status
+            );
+
+        }
+
+    }
+
+    catch (error) {
+
+        /*
+           No mostramos nada a quien visita la página.
+           Simplemente falla silenciosamente.
+        */
+
+        console.log(
+            "Error al registrar visita:",
+            error
+        );
+
+    }
+
+}
+
+
+/*
+   Registramos la visita automáticamente cuando
+   la página termina de cargar.
+*/
+
+registrarVisita();
