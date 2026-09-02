@@ -1998,45 +1998,9 @@ const SUPABASE_KEY =
 async function registrarVisita() {
 
     /*
-       Creamos un identificador para este dispositivo.
-
-       Así evitamos contar muchas veces a la misma persona
-       simplemente porque recargue la página.
+       Cada vez que la página se carga o recarga,
+       se registra una nueva visita.
     */
-
-    const CLAVE_VISITA =
-        "nuestra_historia_ultima_visita";
-
-
-    const ultimaVisita =
-        localStorage.getItem(
-            CLAVE_VISITA
-        );
-
-
-    const ahora =
-        Date.now();
-
-
-    /*
-       Una nueva visita solo se registra después
-       de 24 horas.
-    */
-
-    const VEINTICUATRO_HORAS =
-        24 * 60 * 60 * 1000;
-
-
-    if (
-        ultimaVisita &&
-        ahora - Number(ultimaVisita)
-        < VEINTICUATRO_HORAS
-    ) {
-
-        return;
-
-    }
-
 
     const esCelular =
         /Android|iPhone|iPad|iPod|Mobile/i.test(
@@ -2066,7 +2030,6 @@ async function registrarVisita() {
             await fetch(
                 `${SUPABASE_URL}/rest/v1/visitas`,
                 {
-
                     method:
                         "POST",
 
@@ -2083,32 +2046,17 @@ async function registrarVisita() {
 
                         "Prefer":
                             "return=minimal"
-
                     },
 
                     body:
                         JSON.stringify(
                             datosVisita
                         )
-
                 }
             );
 
 
-        if (
-            respuesta.ok
-        ) {
-
-            /*
-               Solo guardamos la fecha local si Supabase
-               confirmó que la visita fue registrada.
-            */
-
-            localStorage.setItem(
-                CLAVE_VISITA,
-                ahora.toString()
-            );
-
+        if (respuesta.ok) {
 
             console.log(
                 "Visita registrada correctamente."
@@ -2131,7 +2079,8 @@ async function registrarVisita() {
 
         /*
            No mostramos nada a quien visita la página.
-           Simplemente falla silenciosamente.
+           Si ocurre un error, simplemente lo registramos
+           en la consola del navegador.
         */
 
         console.log(
@@ -2145,8 +2094,9 @@ async function registrarVisita() {
 
 
 /*
-   Registramos la visita automáticamente cuando
-   la página termina de cargar.
+   Registramos una visita automáticamente
+   cada vez que se carga la página.
 */
 
 registrarVisita();
+
